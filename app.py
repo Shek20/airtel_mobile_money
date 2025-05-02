@@ -1,12 +1,15 @@
 import streamlit as st
 
+from dotenv import load_dotenv
+import os
+
 import requests
 
-payee_number = "+243811234567"
+load_dotenv()
 
-url = "https://openapiuat.airtel.africa/standard/v1/cashin/"
-
-pin = "1234"
+payee_number = os.getenv("PAYEE_NUMBER")
+url = os.getenv("URL")
+pin = os.getenv("PIN")
 
 headers = {
   'Content-Type': 'application/json',
